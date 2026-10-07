@@ -1,0 +1,38 @@
+### File 1: pseudocode.txt
+// VICCESS SARAH NYAMA
+// BSEM1101 ID:905005974
+// Waste Billing System
+
+START
+    Declare String again
+    Assign again = "yes"
+    Declare String wasteType
+    Declare Real weight
+    Declare Real fee
+
+    While ToLower(again) == "yes"
+        Output "Enter waste type (general,recyclable,hazardous):"
+        Input wasteType
+        Output "Enter weight in kg"
+        Input weight
+        Assign fee = Calculatefee(ToLower(wasteType), weight)
+        Output fee
+        Output "calculate another? yes/no"
+        Input again
+    End While
+END
+
+FUNCTION Calculatefee(wasteType String, weight Real) : Real
+    Declare Real fee
+    If wasteType == "general" Then
+        fee = weight * 2.5
+    Else If wasteType == "recyclable" Then
+        fee = weight * 1.5
+    Else If wasteType == "hazardous" Then
+        fee = weight * 5.0
+    Else
+        fee = 0
+    End If
+    Return fee
+END FUNCTION
+   
